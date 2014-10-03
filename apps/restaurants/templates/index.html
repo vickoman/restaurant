@@ -53,10 +53,9 @@
                 <div class="input-group-btn">
                   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Elige ciudad<span class="caret"></span></button>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Trujillo</a></li>
-                    <li><a href="#">lima</a></li>
-                    <li><a href="#">Chiclayo</a></li>                  
-                    <li><a href="#">Chuzco</a></li>
+                    {% for city in cities %}
+                      <li><a href="#">{{city.name}}</a></li>
+                    {% endfor %}                                        
                   </ul>
                 </div><!-- /btn-group -->
                 <input type="text" class="form-control" placeholder="encuetra tu resturante favorito">
@@ -72,71 +71,43 @@
                 <div class="checkbox">
                   <input type="checkbox"> Todo
                 </div>
-                <div class="checkbox">
-                  <input type="checkbox"> Criolla
-                </div>
-                <div class="checkbox">
-                  <input type="checkbox"> Mariscos
-                </div>
+                {% for category in categories  %}
+                  <div class="checkbox">
+                    <input type="checkbox"> {{category.name}}
+                  </div>
+                {% endfor %}                
               </div>
 
                <div class="form-group">
                 <label for="">Formas de Pago</label>
+                {% for payment in payments %}
                 <div class="checkbox">
-                  <input type="checkbox"> Efectivo
-                </div>
-                <div class="checkbox">
-                  <input type="checkbox"> Mastercard
-                </div>
-                <div class="checkbox">
-                  <input type="checkbox"> Visa
-                </div>
+                  <input type="checkbox"> {{payment.pay}}
+                </div>  
+                {% endfor %}
+                                
               </div>
             </div>
             <div class="col-sm-9">
               
               <div class="list-group">
+                {% for  restaurant, tips in restaurants  %}
                 <a href="" class="list-group-item">
                   <div class="col-sm-3">
-                    <img src="http://lorempixel.com/350/250/food/1/" alt="" class="media-object img-rounded img-responsive">
+                    <img src="{{MEDIA_URL}}{{restaurant.image}}" alt="" class="media-object img-rounded img-responsive">
                   </div>
                   <div class="col-sm-6">
-                    <h3>El Mochica</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum labore consequuntur, distinctio optio officia aliquam obcaecati modi. Totam nam eligendi laboriosam dolor debitis soluta praesentium dolore, nesciunt placeat, commodi, vero?</p>
+                    <h3>{{restaurant.name}}</h3>
+                    <p>{{restaurant.description}}</p>
                   </div>
                   <div class="col-sm-3">
-                    <h2>4 <small>Tips</small></h2>
+                    <h2>{{tips}} <small>Tips</small></h2>
                     <button type="button" class="btn btn-primary btn-lg btn-block">Ver detalle</button>
                   </div>
-                </a>
-
-                <a href="" class="list-group-item">
-                  <div class="col-sm-3">
-                    <img src="http://lorempixel.com/350/250/food/1/" alt="" class="media-object img-rounded img-responsive">
-                  </div>
-                  <div class="col-sm-6">
-                    <h3>El Mochica</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum labore consequuntur, distinctio optio officia aliquam obcaecati modi. Totam nam eligendi laboriosam dolor debitis soluta praesentium dolore, nesciunt placeat, commodi, vero?</p>
-                  </div>
-                  <div class="col-sm-3">
-                    <h2>4 <small>Tips</small></h2>
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Ver detalle</button>
-                  </div>
-                </a>
-
-                <a href="" class="list-group-item">
-                  <div class="col-sm-3">
-                    <img src="http://lorempixel.com/350/250/food/1/" alt="" class="media-object img-rounded img-responsive">
-                  </div>
-                  <div class="col-sm-6">
-                    <h3>El Mochica</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum labore consequuntur, distinctio optio officia aliquam obcaecati modi. Totam nam eligendi laboriosam dolor debitis soluta praesentium dolore, nesciunt placeat, commodi, vero?</p>
-                  </div>
-                  <div class="col-sm-3">
-                    <h2>4 <small>Tips</small></h2>
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Ver detalle</button>
-                  </div>
-                </a>
+                </a>  
+                {% endfor %}
+                
+               
               </div>
 
 
