@@ -95,13 +95,7 @@
             </div>
             <div class="col-sm-9">
               
-              <div class="list-group">
-                
-                
-               
-              </div>
-
-
+              <div class="list-group"></div>
 
             </div>
 
@@ -109,8 +103,8 @@
 
         </div> 
 
-      <!-- TEmplate backbone Restaurants -->
-      <script type="text/template" id="tplRestaurant">
+    <!-- TEmplate backbone Restaurants -->
+    <script type="text/template" id="tplRestaurant">
           <a href="" class="list-group-item">
             <div class="col-sm-3">
               <img src="{{MEDIA_URL}}<%= image %>" alt="" class="media-object img-rounded img-responsive">
@@ -124,7 +118,13 @@
               <button type="button" class="btn btn-primary btn-lg btn-block">Ver detalle</button>
             </div>
           </a>          
-      </script>
+    </script>
+
+    <script>
+      window.stade = false;
+      window.cantidad = 5;
+    </script>
+
      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="{% static "js/vendor/jquery-1.11.1.min.js" %}"><\/script>')</script>
 
