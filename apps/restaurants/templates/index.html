@@ -1,12 +1,167 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title>App Django 7</title>
-	{% load static from staticfiles %}
-	<link rel="stylesheet" href="{% static 'css/main.css' %}">
-</head>
-<body>
-	<h3>Hola mundo</h3>
-</body>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Django 7</title>
+        {% load static from staticfiles %}
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">        
+        <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+        <script src="{% static 'js/vendor/modernizr-2.6.2-respond-1.1.0.min.js' %}"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <div class="navbar navbar-default">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">OndeComer</a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right" id="menu">
+              <a href="" class="btn btn-default navbar-btn">Login con Facebook</a>
+            </div>
+          </div>
+        </div>    
+
+
+        <div class="container">
+          
+          <div class="row">
+            <div class="col-sm-6">
+              <h3>Encuentre el mejor lugar para comer</h3>
+            </div>
+            <div class="col-sm-6 buscador_home">              
+              <div class="input-group">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Elige ciudad<span class="caret"></span></button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Trujillo</a></li>
+                    <li><a href="#">lima</a></li>
+                    <li><a href="#">Chiclayo</a></li>                  
+                    <li><a href="#">Chuzco</a></li>
+                  </ul>
+                </div><!-- /btn-group -->
+                <input type="text" class="form-control" placeholder="encuetra tu resturante favorito">
+              </div><!-- /input-group -->
+            </div>
+          </div>
+
+          <div class="row contenido-home">
+            
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="">Tipo de comida</label>
+                <div class="checkbox">
+                  <input type="checkbox"> Todo
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox"> Criolla
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox"> Mariscos
+                </div>
+              </div>
+
+               <div class="form-group">
+                <label for="">Formas de Pago</label>
+                <div class="checkbox">
+                  <input type="checkbox"> Efectivo
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox"> Mastercard
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox"> Visa
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-9">
+              
+              <div class="list-group">
+                <a href="" class="list-group-item">
+                  <div class="col-sm-3">
+                    <img src="http://lorempixel.com/350/250/food/1/" alt="" class="media-object img-rounded img-responsive">
+                  </div>
+                  <div class="col-sm-6">
+                    <h3>El Mochica</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum labore consequuntur, distinctio optio officia aliquam obcaecati modi. Totam nam eligendi laboriosam dolor debitis soluta praesentium dolore, nesciunt placeat, commodi, vero?</p>
+                  </div>
+                  <div class="col-sm-3">
+                    <h2>4 <small>Tips</small></h2>
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Ver detalle</button>
+                  </div>
+                </a>
+
+                <a href="" class="list-group-item">
+                  <div class="col-sm-3">
+                    <img src="http://lorempixel.com/350/250/food/1/" alt="" class="media-object img-rounded img-responsive">
+                  </div>
+                  <div class="col-sm-6">
+                    <h3>El Mochica</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum labore consequuntur, distinctio optio officia aliquam obcaecati modi. Totam nam eligendi laboriosam dolor debitis soluta praesentium dolore, nesciunt placeat, commodi, vero?</p>
+                  </div>
+                  <div class="col-sm-3">
+                    <h2>4 <small>Tips</small></h2>
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Ver detalle</button>
+                  </div>
+                </a>
+
+                <a href="" class="list-group-item">
+                  <div class="col-sm-3">
+                    <img src="http://lorempixel.com/350/250/food/1/" alt="" class="media-object img-rounded img-responsive">
+                  </div>
+                  <div class="col-sm-6">
+                    <h3>El Mochica</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum labore consequuntur, distinctio optio officia aliquam obcaecati modi. Totam nam eligendi laboriosam dolor debitis soluta praesentium dolore, nesciunt placeat, commodi, vero?</p>
+                  </div>
+                  <div class="col-sm-3">
+                    <h2>4 <small>Tips</small></h2>
+                    <button type="button" class="btn btn-primary btn-lg btn-block">Ver detalle</button>
+                  </div>
+                </a>
+              </div>
+
+
+
+            </div>
+
+          </div>
+
+        </div> 
+
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{% static 'js/vendor/jquery-1.11.1.min.js' %}"><\/script>')</script>
+
+        <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+
+        <script src="{% static 'js/main.js' %}"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
 </html>
