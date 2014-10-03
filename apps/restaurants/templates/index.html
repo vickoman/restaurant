@@ -17,7 +17,7 @@
 
         <script src="{% static 'js/vendor/modernizr-2.6.2-respond-1.1.0.min.js' %}"></script>
     </head>
-    <body>
+    <body id="app">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -96,21 +96,7 @@
             <div class="col-sm-9">
               
               <div class="list-group">
-                {% for  restaurant, tips in restaurants  %}
-                <a href="" class="list-group-item">
-                  <div class="col-sm-3">
-                    <img src="{{MEDIA_URL}}{{restaurant.image}}" alt="" class="media-object img-rounded img-responsive">
-                  </div>
-                  <div class="col-sm-6">
-                    <h3>{{restaurant.name}}</h3>
-                    <p>{{restaurant.description}}</p>
-                  </div>
-                  <div class="col-sm-3">
-                    <h2>{{tips}} <small>Tips</small></h2>
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Ver detalle</button>
-                  </div>
-                </a>  
-                {% endfor %}
+                
                 
                
               </div>
@@ -123,21 +109,33 @@
 
         </div> 
 
+      <!-- TEmplate backbone Restaurants -->
+      <script type="text/template" id="tplRestaurant">
+          <a href="" class="list-group-item">
+            <div class="col-sm-3">
+              <img src="{{MEDIA_URL}}<%= image %>" alt="" class="media-object img-rounded img-responsive">
+            </div>
+            <div class="col-sm-6">
+              <h3><%= name %></h3>
+              <p><%= description %></p>
+            </div>
+            <div class="col-sm-3">
+              <h2><%= tips %> <small>Tips</small></h2>
+              <button type="button" class="btn btn-primary btn-lg btn-block">Ver detalle</button>
+            </div>
+          </a>          
+      </script>
      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="{% static 'js/vendor/jquery-1.11.1.min.js' %}"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="{% static "js/vendor/jquery-1.11.1.min.js" %}"><\/script>')</script>
 
         <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
-
-        <script src="{% static 'js/main.js' %}"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
+        <script src="{% static 'js/vendor/underscore-min.js' %}"></script>
+        <script src="{% static 'js/vendor/backbone-min.js' %}"></script>
+        <script src="{% static 'js/backbone/models/modelos.js' %}"></script>
+        <script src="{% static 'js/backbone/collections/colecciones.js' %}"></script>
+        <script src="{% static 'js/backbone/views/vistas.js' %}"></script>
+        <script src="{% static 'js/backbone/routes/rutas.js' %}"></script>
+        <script src="{% static 'js/backbone/app.js' %}"></script>
+       
     </body>
 </html>
