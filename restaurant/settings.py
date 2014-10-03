@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'apps.restaurants',
     'social.apps.django_app.default',
+    'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (
