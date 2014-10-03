@@ -19,7 +19,7 @@ class PaymentAdmin(admin.ModelAdmin):
 
 @admin.register(Establishment)
 class EstablishmentAdmin(admin.ModelAdmin):
-	list_display = ('direccion',)
+	list_display = ('direccion','restaurant',)
 
 @admin.register(Tip)	
 class TipAdmin(admin.ModelAdmin):

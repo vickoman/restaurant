@@ -1,10 +1,13 @@
 from django.conf.urls import patterns, include, url
 from .views import IndexView
 from rest_framework import routers 
-from .viewSets import RestaurantViewSet
+from .viewSets import RestaurantViewSet, CategoryViewSet, PaymentViewSet, CityViewSet
 
 router = routers.DefaultRouter()
 router.register(r'restaurants', RestaurantViewSet)
+router.register(r'categorias', CategoryViewSet)
+router.register(r'payments', PaymentViewSet)
+router.register(r'ciudades', CityViewSet)
 
 urlpatterns = patterns('',	
 	url(r'^$', IndexView.as_view()),
