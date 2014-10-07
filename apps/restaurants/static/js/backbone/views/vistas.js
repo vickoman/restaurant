@@ -43,14 +43,14 @@ app.mainView = Backbone.View.extend({
 
 	agregarFiltro: function(coleccionFiltro){
 		this.$('.list-group').html('');
-		if(window.stade === false){
-			coleccionFiltro = coleccionFiltro.filter(function(){
-				if(window.cantidad >= modelo.get('id'))
-				{
-					return modelo;
-				}
-			});
-		}
+		// if(window.stade === false){
+		// 	coleccionFiltro = coleccionFiltro.filter(function(){
+		// 		if(window.cantidad >= modelo.get('id'))
+		// 		{
+		// 			return modelo;
+		// 		}
+		// 	});
+		// }
 		coleccionFiltro.forEach(this.agregarRestaurant, this);
 	},
 
