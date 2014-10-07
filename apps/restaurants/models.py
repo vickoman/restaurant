@@ -7,11 +7,18 @@ class Category(models.Model):
 	def __unicode__(self):
 		return self.name
 
+	class Meta:
+		verbose_name='Categoria'
+		verbose_name_plural = 'Categorias'
+
 class City(models.Model):
 	name = models.CharField(max_length=100)
 
 	def __unicode__(self):
 		return self.name
+	class Meta:
+		verbose_name='Ciudad'
+		verbose_name_plural = 'Ciudades'
 
 class Payment(models.Model):
 	pay = models.CharField(max_length=50)
@@ -19,6 +26,10 @@ class Payment(models.Model):
 
 	def __unicode__(self):
 		return self.pay
+
+	class Meta:
+		verbose_name='Pago'
+		verbose_name_plural = 'Pagos'
 
 class Restaurant(models.Model):
 	payment = models.ManyToManyField(Payment)
@@ -30,6 +41,10 @@ class Restaurant(models.Model):
 	def __unicode__(self):
 		return self.name
 
+	class Meta:
+		verbose_name='Restaurantes'
+		verbose_name_plural = 'Restaurantes'
+
 class Establishment(models.Model):
 	restaurant = models.ForeignKey(Restaurant)
 	city = models.ForeignKey(City)
@@ -37,6 +52,10 @@ class Establishment(models.Model):
 
 	def __unicode__(self):
 		return self.direccion
+
+	class Meta:
+		verbose_name='Establecimiento'
+		verbose_name_plural='Establecimientos'
 
 class Tip(models.Model):
 	restaurant = models.ForeignKey(Restaurant)

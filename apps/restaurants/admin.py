@@ -8,6 +8,7 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(Restaurant)
 class RestaurantAdmin(admin.ModelAdmin):
 	list_display = ('name',)
+	list_filter = ('establishment__city', 'payment', 'category')
 
 @admin.register(City)
 class CityAdmin(admin.ModelAdmin):
