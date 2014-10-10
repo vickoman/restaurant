@@ -8,7 +8,7 @@ class RestaurantViewSet(viewsets.ReadOnlyModelViewSet):
 	model = Restaurant
 	serializer_class = RestaurantSerializer
 
-class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
+class CategoryViewSet(viewsets.ModelViewSet):
 	model = Category 
 	serializer_class = CategorySerializer
 
